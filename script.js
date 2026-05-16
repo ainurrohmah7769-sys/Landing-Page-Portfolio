@@ -7,7 +7,8 @@ const images = [
   "bled.png",
   "syp.png",
   "ratio.png",
-  "screw.png"
+  "screw.png",
+  "kosong.png"
 ];
 
 // preload semua gambar
