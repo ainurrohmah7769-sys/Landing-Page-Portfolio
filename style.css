@@ -229,13 +229,13 @@ nav {
 }
 
 /*HEROOO*/
+/*Poppins sebagai font dasar (body) */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif; 
 }
-
 
 .hero-content h1 {
   font-family: 'Playfair Display', serif; 
@@ -244,7 +244,6 @@ nav {
   font-weight: 700;
   line-height: 1.1;
 }
-
 
 .highlight {
   font-family: 'Playfair Display', serif;
@@ -261,7 +260,6 @@ nav {
   color: #1a1a3e; 
   text-shadow: #000000;
 }
-
 
 .btn {
   font-family: 'Poppins', sans-serif;
@@ -289,8 +287,8 @@ nav {
 }
 
 .hero-content h1 {
-  font-size: 70px; 
-  color: #1a1a31; 
+  font-size: 70px; /* Sesuaikan ukuran font judul */
+  color: #1a1a31; /* Warna biru gelap sesuai PDF */
   margin-bottom: 10px;
   line-height: 1.2;
 }
@@ -323,7 +321,7 @@ h1.intro {
   margin-bottom: 25px;
 }
 
-/* --- 2. HERO BUTTONS--- */
+/* --- 2. HERO BUTTONS (STYLING TOMBOL) --- */
 .hero-buttons {
   display: flex;
   gap: 15px; /* Jarak antar tombol */
@@ -340,40 +338,37 @@ h1.intro {
 }
 
 .btn-primary {
-  background-color: #1a1a31; 
+  background-color: #1a1a31; /* Biru gelap */
   color: white;
 }
 
 .btn-secondary {
-  background-color: #F5E050; 
+  background-color: #F5E050; /* Kuning terang */
   color: #ffffff;
 }
 
-/* --- 3. GLOBAL SHADOW & IMAGE SETUP (UNTUK SEMUA GAMBAR) --- */
+/* --- GLOBAL SHADOW & IMAGE SETUP (UNTUK SEMUA GAMBAR) --- */
 .hero img {
   position: absolute;
-  /* Efek drop-shadow untuk semua gambar */
   filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.3)); 
 }
 
-/* --- 4. AREA GAMBAR KIRI (hero-container) --- */
+/* ---AREA GAMBAR KIRI (hero-container) --- */
 .hero-container {
   position: absolute;
-  left: 15%;
-  top: 15%;
+  left: 15%; /* Geser ke kanan dari pinggir kiri */
+  top: 15%; /* Geser ke bawah dari pinggir atas */
   width: 180px;
   height: 190px;
-
-  overflow: hidden;
 }
 
-/* Elemen Kiri */
+/* Posisi Presisi & Ukuran Gambar Tumpukan Kiri */
 .bulatputih1hero { width: 170px; top: -90px; left: 40px; z-index: 2; }
 .bulatkuning1hero { width: 190px; top: -80px; left: -10px; z-index: 1; }
 .bulatbiru1hero   { width: 140px; top: 20px; left: 90px; z-index: 3; }
 .bintangkuninghero { width: 145px; top: 25px; left: 28px; z-index: 4; }
 
-/* ---area kanan --- */
+/* --- AREA GAMBAR KANAN BAWAH--- */
 .hero-container2 {
   position: absolute;
   right: 12%; /* Geser ke kiri dari pinggir kanan */
@@ -382,7 +377,7 @@ h1.intro {
   height: 200px;
 }
 
-/* Posisi Elemen Kanan */
+/* Posisi Presisi & Ukuran Gambar Tumpukan Kanan */
 .bulatputih2hero { width: 185px; top: -60px; right: 99px; z-index: 2; }
 .bulatkuning2hero { width: 140px; top: -90px; right: 170px; z-index: 3; }
 .bulatbiru2hero   { width: 200px; top: -35px; right: 37px; z-index: 1; }
@@ -394,14 +389,13 @@ h1.intro {
     width: 95%;          /* Pakai persentase besar biar panjang */
     max-width: 1400px;   /* Batas maksimal biar nggak terlalu melar di monitor gede */
     
-    /* 2. Atur Ketebalan & Warna */
+    /* Ketebalan & Warna */
     height: 1px;
     background: #d7c05c;
-
-    /* 3. Atur Posisi (Biar Turun & Tengah) */
-    display: block;     
-    margin-left: auto;  
-    margin-right: auto;  
+  
+    display: block;      
+    margin-left: auto;   /* Paksa margin kiri otomatis */
+    margin-right: auto;  /* Paksa margin kanan otomatis */
     margin-top: 150px;   
     margin-bottom: 20px; /* Jarak ke elemen di bawahnya */
 }
@@ -521,7 +515,7 @@ h1.intro {
 }
 
 .line-y{
-  width: 110px;
+  width: 110px; 
   height: 2px;
   background: #e8cf67;
 }
@@ -969,7 +963,7 @@ body{
     margin: 40px 0; /* Jarak atas bawah agar tidak terlalu mepet section */
 }
 
-/* GARIS KUNING TENGAHNYA BINTANG (cakep (apasi)) */
+/* GARIS KUNING TENGAHNYA BINTANG (cakep) */
 .containerelement {
     width: 100%;
     display: flex;
@@ -978,15 +972,13 @@ body{
     margin: 190px 0 120px 0; /* Jarak atas-bawah */
 }
 
-/* garis & bintang */
+/* Bungkus garis & bintang agar SEJAJAR KE SAMPING */
 .yellow-divider2 {
-    display: flex !important;      
+    display: flex !important;      /* sejajar ke samping */
     flex-direction: row !important; 
-    align-items: center;          
+    align-items: center;           /* Bintang & garis lurus di tengah secara vertikal */
     justify-content: center;
     gap: 25px;                     /* Jarak antara garis dan bintang */
-    
-    /* Buat memperbesar */
     transform: scale(3.0); 
     transform-origin: center;
 }
@@ -996,18 +988,18 @@ body{
     width: 130px; /* Lebar garis */
     height: 2px;
     background-color: #e8cf67;
-    flex-shrink: 0; /* Mencegah garis menciut */
+    flex-shrink: 0; 
 }
 
 /* Bintang Kuning */
 .star-y-mid2 {
-    width: 30px; 
+    width: 30px; /* Sesuaikan ukuran bintang */
     height: auto;
     flex-shrink: 0;
 }
 
 
-/* ==== Bagian Portfolio ====*/
+/*Bagian Portfolio*/
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -1104,7 +1096,7 @@ body {
 .projects-container {
   background: #F5E050;
   border-radius: 20px;
-  padding: 55px 70px; /*atas bawah, kiri kanan cantik*/
+  padding: 55px 70px; /*atas bawah, kiri kanan*/
   position: relative;
   z-index: 2;
 
@@ -1189,7 +1181,7 @@ body {
 
 .btn-demo,
 .btn-github {
-  padding: 2px 12px; /*atas bawah,kiri kanan ea*/
+  padding: 2px 12px; /*atas bawah,kiri kanan*/
   border-radius: 20px;
   font-size: 12px;
   font-weight: 700;
@@ -1262,7 +1254,7 @@ body {
 
 }
 
-/* ==== Bagian Contact ====*/
+/*Bagian Contact*/
 * {
   margin: 0;
   padding: 0;
@@ -1354,7 +1346,7 @@ body {
 .contact-container {
   display: flex;
   gap: 0px;           /* INI JARAK TENGAH ANTARA 2 CARD */
-  align-items: stretch; /* biar tinggi kedua card sama rata */
+  align-items: stretch; /* Agar tinggi kedua card sama rata */
   position: relative; 
   z-index: 2;
 }
@@ -1364,7 +1356,7 @@ body {
   flex: 1;             /* Bagi rata lebar */
   border-radius: 16px; /* Sudut membulat */
   padding: 35px 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* bayangan dikit */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sedikit bayangan */
   transition: transform 0.3s;
    min-height: 700px;
 }
@@ -1523,7 +1515,7 @@ body {
   flex-direction: column;
   gap: 16px;
   margin-top: auto;
-  align-items: center; 
+  align-items: center; /* center blok */
 }
 
 .info-item {
@@ -1531,7 +1523,7 @@ body {
   align-items: center;
   gap: 12px;
 
-  width: 100%;              
+  width: 100%;            
   max-width: 420px;         
   justify-content: flex-start; /* teks tetap rata kiri */
 }
@@ -1551,9 +1543,9 @@ body {
 }
 
 .divider-yellow {
-  width: 80%;             
+  width: 80%;              /* sama kayak garis modern */
   height: 3px;             /* tebal garis */
-  background: #F5E050;     
+  background: #F5E050;     /* kuning */
   margin: 80px auto 40px;  /* jarak atas & bawah */
   border-radius: 10px;
   opacity: 0.9;
@@ -1660,7 +1652,7 @@ footer {
   opacity: 0.7;
 }
 
-/* ===== CENTER (ANAIRO tengah) ===== */
+/* ===== CENTER (ANAIRO 2 TRUE CENTER) ===== */
 .footer-center {
   position: absolute;
   left: 50%;
@@ -1683,7 +1675,7 @@ footer {
   margin: 4px 0;
 }
 
-/* ===== COPYRIGHT ===== */
+/* ===== COPYRIGHT (FIX BAWAH TENGAH) ===== */
 .footer-center .copyright {
   margin-top: 40px;
   font-size: 18px;
