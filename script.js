@@ -10,6 +10,12 @@ const images = [
   "screw.png"
 ];
 
+// preload semua gambar
+images.forEach(src => {
+  const img = new Image();
+  img.src = src;
+});
+
 // klik antar halaman
 document.querySelectorAll('a[href]').forEach(link => {
   link.addEventListener("click", function (e) {
