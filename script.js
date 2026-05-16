@@ -4,10 +4,10 @@ const loaderImage = document.getElementById("loaderImage");
 // gambar random loading
 const images = [
   "pusing.png",
-  "https://static.wikia.nocookie.net/houkai-star-rail/images/3/3e/Sticker_PPG_11_Dr._Ratio_04.png/revision/latest?cb=20231220232523",
-  "https://static.wikia.nocookie.net/houkai-star-rail/images/0/0c/Sticker_PPG_11_Screwllum_01.png/revision/latest?cb=20231220232714",
-  "https://static.wikia.nocookie.net/houkai-star-rail/images/5/53/Sticker_PPG_20_Chimera_02.png/revision/latest?cb=20250226165702",
-  "https://static.wikia.nocookie.net/houkai-star-rail/images/3/35/Sticker_PPG_27_Mortenax_Blade_03.png/revision/latest?cb=20260424203843"
+  "bled.png",
+  "syp.png",
+  "ratio.png",
+  "screw.png"
 ];
 
 // klik antar halaman
