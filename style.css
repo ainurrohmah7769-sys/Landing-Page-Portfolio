@@ -359,10 +359,12 @@ h1.intro {
 /* --- 4. AREA GAMBAR KIRI (hero-container) --- */
 .hero-container {
   position: absolute;
-  left: 15%; /* Geser ke kanan dari pinggir kiri */
-  top: 15%; /* Geser ke bawah dari pinggir atas */
+  left: 15%;
+  top: 15%;
   width: 180px;
   height: 190px;
+
+  overflow: hidden;
 }
 
 /* Elemen Kiri */
