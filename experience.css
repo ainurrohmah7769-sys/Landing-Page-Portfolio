@@ -1,0 +1,435 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #ffffff;
+  color: #1e2150;
+  overflow-x: hidden;
+}
+
+
+.page-loader {
+  position: fixed;
+  inset: 0;
+  background: #1a1a3e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+}
+
+.page-loader.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+.loader-content h1 {
+  color: #f0d86c;
+  font-size: 42px;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.loader-img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* DOT ANIMATION */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.dots span {
+  width: 10px;
+  height: 10px;
+  background: #f0d86c;
+  border-radius: 50%;
+  animation: bounce 1s infinite ease-in-out;
+}
+
+.dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0.3);
+    opacity: 0.4;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 60px;
+
+  background: #f5f5f5;
+  border-bottom: 1px solid #f0d86c;
+
+  z-index: 1000;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-circle {
+  width: 42px;
+  height: 42px;
+  border: 2px solid #f0d86c;
+  border-radius: 50%;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ANAIRO (atas) */
+.brand-main {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #1a1a3e;
+  font-family: 'Playfair Display', serif;
+}
+
+/* NAMA (bawah) */
+.brand-name {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: 'Playfair Display', serif;
+}
+
+/* warna split */
+.brand-name .b {
+  color: #1e2150;
+}
+
+.brand-name .y {
+  color: #f0d86c;
+}
+
+/* ---- NAV LINKS ---- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links > li > a {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #1e2150;
+  transition: color 0.3s;
+}
+
+.nav-links > li > a.active,
+.nav-links > li > a:hover {
+  color: #f0d86c;
+}
+
+/* ---- DROPDOWN ---- */
+.dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+  color: #f0d86c;
+}
+
+.dropdown-toggle .arrow {
+  display: inline-block;
+  font-size: 10px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  background: #1a1a3e;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  padding: 6px 16px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  text-decoration: none;
+}
+
+.dropdown-wrapper:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== EXPERIENCE ===== */
+.experience {
+  padding-bottom: 80px;
+}
+
+/* ===== TITLE EXPERIENCE ===== */
+.experience-header {
+  text-align: center;
+  margin-top: 180px; /* jarak dari navbar */
+  margin-bottom: 50px;
+}
+
+/* JUDUL 1 */
+.experience-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 42px;
+  letter-spacing: 2px;
+  color: #1a1a3e;
+}
+
+/* JUDUL 2 */
+.experience-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 40px;
+  margin-top: 10px;
+  color: #1a1a3e;
+}
+
+/* ===== BIG CARD ===== */
+.experience-card {
+  background: #1a1a3e;
+  max-width: 1000px;
+  margin: auto;
+  padding: 60px;
+  border-radius: 16px;
+  margin-bottom: 120px;
+}
+
+.experience-card p {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* ===== FOOTER ===== */
+
+footer {
+  background-color: #1a1a3e;
+  color: white;
+  width: 100%;
+  padding: 60px 0 40px 0;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 0 40px;
+  gap: 80px;
+  position: relative;
+}
+
+/* ===== KIRI (ANAIRO 1 + GARIS) ===== */
+.footer-brand {
+  position: relative;
+  padding-right: 30px;
+  flex-shrink: 0;
+}
+
+.footer-brand::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: white;
+}
+
+.footer-brand h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  letter-spacing: 2px;
+}
+
+/* ===== NAVIGATION ===== */
+.footer-column:first-of-type {
+  margin-left: 30px;
+}
+
+.footer-column h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.footer-column ul li a:hover {
+  opacity: 0.7;
+}
+
+/* ===== CENTER (ANAIRO 2 TRUE CENTER) ===== */
+.footer-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-center h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  margin-bottom: 6px;
+}
+
+.footer-center p {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 4px 0;
+}
+
+/* ===== COPYRIGHT (FIX BAWAH TENGAH) ===== */
+.footer-center .copyright {
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+/* ===== SOCIAL (KANAN) ===== */
+.footer-column:last-of-type {
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+/* ===== ICON SOCIAL ===== */
+.social-links li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.social-links i {
+  font-size: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .footer-brand,
+  .footer-column,
+  .footer-center {
+    width: 100%;
+  }
+
+  .footer-center {
+    position: static;
+    transform: none;
+  }
+
+  .footer-column:first-of-type,
+  .footer-column:last-of-type {
+    margin: 0;
+    padding: 0;
+  }
+
+  .social-links li {
+    justify-content: center;
+  }
+}
