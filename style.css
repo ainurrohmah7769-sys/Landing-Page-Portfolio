@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: 'Open Sans', sans-serif;
   background: #ffffff;
@@ -238,9 +234,10 @@ nav {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif; 
+  font-family: 'Poppins', sans-serif; /* Teks umum pakai Poppins */
 }
 
+/* Judul Utama pakai Playfair Display */
 .hero-content h1 {
   font-family: 'Playfair Display', serif; 
   font-size: 3.5rem;
@@ -249,10 +246,11 @@ nav {
   line-height: 1.1;
 }
 
+/* Nama yang di-highlight juga pakai Playfair */
 .highlight {
   font-family: 'Playfair Display', serif;
   color: #f0d86c;
-  font-style: italic; 
+  font-style: italic; /* Biar makin mirip PDF yang agak miring elegan */
 }
 
 
@@ -265,9 +263,11 @@ nav {
   text-shadow: #000000;
 }
 
+/* Tombol juga pakai Poppins */
 .btn {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
+  /* ... sisa kode button lainnya ... */
 }
 /* =========================================
    === HERO SECTION ===
@@ -351,19 +351,22 @@ h1.intro {
   color: #ffffff;
 }
 
-/* --- GLOBAL SHADOW & IMAGE SETUP (UNTUK SEMUA GAMBAR) --- */
+/* --- 3. GLOBAL SHADOW & IMAGE SETUP (UNTUK SEMUA GAMBAR) --- */
 .hero img {
   position: absolute;
+  /* Efek drop-shadow untuk semua gambar */
   filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.3)); 
 }
 
-/* ---AREA GAMBAR KIRI (hero-container) --- */
+/* --- 4. AREA GAMBAR KIRI (hero-container) --- */
 .hero-container {
   position: absolute;
+  /* Patokan posisi dari PDF */
   left: 15%; /* Geser ke kanan dari pinggir kiri */
   top: 15%; /* Geser ke bawah dari pinggir atas */
   width: 180px;
   height: 190px;
+  /* background-color: rgba(255,0,0,0.1); /* Hilangkan komen ini untuk melihat area kotak */
 }
 
 /* Posisi Presisi & Ukuran Gambar Tumpukan Kiri */
@@ -372,9 +375,10 @@ h1.intro {
 .bulatbiru1hero   { width: 140px; top: 20px; left: 90px; z-index: 3; }
 .bintangkuninghero { width: 145px; top: 25px; left: 28px; z-index: 4; }
 
-/* --- AREA GAMBAR KANAN BAWAH--- */
+/* --- 5. AREA GAMBAR KANAN BAWAH (hero-container2) --- */
 .hero-container2 {
   position: absolute;
+  /* Patokan posisi dari PDF */
   right: 12%; /* Geser ke kiri dari pinggir kanan */
   bottom: 20%; /* Geser ke atas dari pinggir bawah */
   width: 200px;
@@ -393,14 +397,15 @@ h1.intro {
     width: 95%;          /* Pakai persentase besar biar panjang */
     max-width: 1400px;   /* Batas maksimal biar nggak terlalu melar di monitor gede */
     
-    /* Ketebalan & Warna */
+    /* 2. Atur Ketebalan & Warna */
     height: 1px;
     background: #d7c05c;
-  
-    display: block;      
+
+    /* 3. Atur Posisi (Biar Turun & Tengah) */
+    display: block;      /* Pastikan elemen ini dianggap satu baris penuh */
     margin-left: auto;   /* Paksa margin kiri otomatis */
     margin-right: auto;  /* Paksa margin kanan otomatis */
-    margin-top: 150px;   
+    margin-top: 150px;   /* Ini angka buat nurunin garisnya (sesuaikan sesukamu) */
     margin-bottom: 20px; /* Jarak ke elemen di bawahnya */
 }
 
@@ -519,13 +524,13 @@ h1.intro {
 }
 
 .line-y{
-  width: 110px; 
+  width: 110px; /* tadinya 140px */
   height: 2px;
   background: #e8cf67;
 }
 
 .star-y-mid{
-  width: 45px; 
+  width: 45px; /* tadinya 28px */
 }
 
 /* ================= MAIN ================= */
@@ -683,7 +688,7 @@ h1.intro {
   position: relative;
   align-self: flex-start;
   margin-top: -70px;
-  left: -280px;
+  left: -280px; /* geser sendiri tanpa dorong elemen lain */
 }
 
 .description p{
@@ -908,26 +913,39 @@ body{
     height: 100%;
     background: #F5E050;
     border-radius: 30px;
+
+    width: 0;
+    transition: width 1.5s ease;
 }
 
 .html{
-    width: 60%;
+    --target-width: 60%;
 }
 
 .css{
-    width: 50%;
+    --target-width: 50%;
 }
 
 .js{
-    width: 20%;
+    --target-width: 20%;
 }
 
 .figma{
-    width: 40%;
+    --target-width: 40%;
 }
 
 .canva{
-    width: 80%;
+    --target-width: 80%;
+}
+
+@keyframes fillBar{
+    from{
+        width: 0;
+    }
+
+    to{
+        width: var(--target-width);
+    }
 }
 
 @media(max-width:768px){
@@ -978,11 +996,13 @@ body{
 
 /* Bungkus garis & bintang agar SEJAJAR KE SAMPING */
 .yellow-divider2 {
-    display: flex !important;      /* sejajar ke samping */
-    flex-direction: row !important; 
+    display: flex !important;      /* Paksa agar sejajar ke samping */
+    flex-direction: row !important; /* Pastikan arahnya horizontal */
     align-items: center;           /* Bintang & garis lurus di tengah secara vertikal */
     justify-content: center;
     gap: 25px;                     /* Jarak antara garis dan bintang */
+    
+    /* Perbesar keseluruhan di sini */
     transform: scale(3.0); 
     transform-origin: center;
 }
@@ -992,7 +1012,7 @@ body{
     width: 130px; /* Lebar garis */
     height: 2px;
     background-color: #e8cf67;
-    flex-shrink: 0; 
+    flex-shrink: 0; /* Mencegah garis menciut */
 }
 
 /* Bintang Kuning */
@@ -1360,7 +1380,7 @@ body {
   flex: 1;             /* Bagi rata lebar */
   border-radius: 16px; /* Sudut membulat */
   padding: 35px 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sedikit bayangan */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sedikit bayangan agar floating */
   transition: transform 0.3s;
    min-height: 700px;
 }
@@ -1527,8 +1547,8 @@ body {
   align-items: center;
   gap: 12px;
 
-  width: 100%;            
-  max-width: 420px;         
+  width: 100%;              /* PENTING: jangan fit-content */
+  max-width: 420px;         /* ini yang bikin tetap “center look” */
   justify-content: flex-start; /* teks tetap rata kiri */
 }
 
