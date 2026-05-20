@@ -69,3 +69,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   items.forEach(el => observer.observe(el));
 });
+
+//buat animasi di progress bar//
+const fills = document.querySelectorAll('.fill');
+
+const observer = new IntersectionObserver((entries) => {
+
+  entries.forEach(entry => {
+
+    const fill = entry.target;
+
+    if (entry.isIntersecting) {
+
+      fill.style.width =
+        getComputedStyle(fill).getPropertyValue('--target-width');
+
+    } else {
+
+      fill.style.width = '0';
+
+    }
+
+  });
+
+}, {
+  threshold: 0.5
+});
+
+fills.forEach(fill => {
+  observer.observe(fill);
+});
